@@ -6,7 +6,7 @@ namespace PayrollConsApp
 {
     public class Manager : Staff
     {
-        private const float managerHourlyRate = 50;
+        private const float managerHourlyRate = 50f;
 
         public int Allowance { get; set; }
 
