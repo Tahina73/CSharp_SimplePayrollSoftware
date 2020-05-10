@@ -24,12 +24,15 @@ namespace PayrollConsApp
 
         public override string ToString()
         {
-            return @$" Manager : {NameOfStaff}
+            return @$"  Manager : {NameOfStaff}
+                        ===================================
                         Hourly rate : {managerHourlyRate.ToString()}
                         Hours worked : {HoursWorked.ToString()}
-                        Allowance : {Allowance.ToString()}
-                        Total pay : {TotalPay.ToString()}
-                        Basic pay : {BasicPay.ToString()}";
+                        Allowance : ${Allowance.ToString()}
+                        Basic pay : ${BasicPay.ToString()}
+                        ===================================
+                        Total pay : ${TotalPay.ToString()}
+                        ===================================";
         }
     }
 }
