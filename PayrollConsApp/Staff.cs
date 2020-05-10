@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PayrollConsApp
 {
-    class Staff
+    public class Staff
     {
         private float hourlyRate;
         private int hWorked;
@@ -40,11 +40,11 @@ namespace PayrollConsApp
 
         public override string ToString()
         {
-            return @$" STAFF {NameOfStaff}
+            return @$" Staff : {NameOfStaff}
                         Hourly rate : {hourlyRate.ToString()}
-                        Hours worked : {hWorked.ToString()}
-                        Total pay : {hWorked.ToString()}
-                        Basic pay : {hWorked.ToString()}";
+                        Hours worked : {HoursWorked.ToString()}
+                        Total pay : {TotalPay.ToString()}
+                        Basic pay : {BasicPay.ToString()}";
         }
     }
 }
