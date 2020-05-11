@@ -40,7 +40,7 @@ namespace PayrollConsApp
             string path = string.Empty;
             foreach (Staff member in myStaff)
             {
-                path = member.NameOfStaff + ".txt";
+                path = year+"_"+(MonthsOfYear)month + "_"+member.NameOfStaff + ".txt";
                 using (StreamWriter sw = new StreamWriter(path, false))
                 {
                     sw.WriteLine($"PAYSLIP FOR {(MonthsOfYear)month} {year.ToString()} ");
@@ -60,7 +60,7 @@ namespace PayrollConsApp
                          where member.HoursWorked < 10
                          orderby member.NameOfStaff ascending
                          select new { member.NameOfStaff, member.HoursWorked };
-            using (StreamWriter sw = new StreamWriter(path, false))
+            using (StreamWriter sw = new StreamWriter(year + "_" + (MonthsOfYear)month + "_" + path, false))
             {
                 if (result != null && result.Count() > 0)
                 {
@@ -70,8 +70,8 @@ namespace PayrollConsApp
                     foreach (var elt in result)
                     {
                         sw.WriteLine($@"Name         = {elt.NameOfStaff.ToUpper()}
-                                     Hours worked = {elt.HoursWorked}
-                                     **********************");
+Hours worked = {elt.HoursWorked}
+**********************");
                     }
                 }
                 else
@@ -90,8 +90,8 @@ namespace PayrollConsApp
                 foreach (var elt in result)
                 {
                     Console.WriteLine($@"Name         = {elt.NameOfStaff.ToUpper()}
-                                     Hours worked = {elt.HoursWorked}
-                                     **********************");
+Hours worked = {elt.HoursWorked}
+**********************");
                 }
             }
             else

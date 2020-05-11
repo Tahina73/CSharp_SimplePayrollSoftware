@@ -18,7 +18,7 @@ namespace PayrollConsApp
         {
             List<Staff> myStaff = null;
             string[] result = new string[2];
-            string[] separator = { ", " };
+            string[] separator = { "," };
 
             try
             {

@@ -19,20 +19,20 @@ namespace PayrollConsApp
             base.CalculatePay();
             Allowance = 1000;
             if (HoursWorked > 160)
-                TotalPay += 1000;
+                TotalPay += Allowance;
         }
 
         public override string ToString()
         {
             return @$"  Manager : {NameOfStaff}
-                        ===================================
-                        Hourly rate : {managerHourlyRate.ToString()}
-                        Hours worked : {HoursWorked.ToString()}
-                        Allowance : ${Allowance.ToString()}
-                        Basic pay : ${BasicPay.ToString()}
-                        ===================================
-                        Total pay : ${TotalPay.ToString()}
-                        ===================================";
+===================================
+Hourly rate : {managerHourlyRate.ToString()}
+Hours worked : {HoursWorked.ToString()}
+Allowance : ${Allowance.ToString()}
+Basic pay : ${BasicPay.ToString()}
+===================================
+Total pay : ${TotalPay.ToString()}
+===================================";
         }
     }
 }

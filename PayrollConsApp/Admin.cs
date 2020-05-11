@@ -7,7 +7,7 @@ namespace PayrollConsApp
     public class Admin : Staff
     {
         private const float overtimeRate = 15.5f;
-        private const float adminHourlyRate = 30f;
+        private const float adminHourlyRate = 70f;
 
         public float Overtime { get; private set; }
 
@@ -29,15 +29,15 @@ namespace PayrollConsApp
         public override string ToString()
         {
             return @$"  Admin : {NameOfStaff}
-                        ==========================================
-                        Hourly rate : {adminHourlyRate.ToString()}
-                        Hours worked : {HoursWorked.ToString()}
-                        Overtime rate : {overtimeRate.ToString()}
-                        Overtime pay : ${Overtime.ToString()}
-                        Basic pay : ${BasicPay.ToString()}
-                        ===================================
-                        Total pay : ${TotalPay.ToString()}
-                        ===================================";
+==========================================
+Hourly rate : {adminHourlyRate.ToString()}
+Hours worked : {HoursWorked.ToString()}
+Overtime rate : {overtimeRate.ToString()}
+Overtime pay : ${Overtime.ToString()}
+Basic pay : ${BasicPay.ToString()}
+===================================
+Total pay : ${TotalPay.ToString()}
+===================================";
         }
     }
 }
