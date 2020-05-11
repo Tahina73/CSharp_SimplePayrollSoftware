@@ -39,29 +39,32 @@ namespace PayrollConsApp
                 }
             }
             myStaff = fr.ReadFile();
-            while(i<myStaff.Count)
+            if (myStaff != null && myStaff.Count > 0)
             {
-                try
+                while (i < myStaff.Count)
                 {
-                    Console.WriteLine("Enter hours worked for " + myStaff[i].NameOfStaff.ToUpper());
-                    myStaff[i].HoursWorked = Convert.ToInt32(Console.ReadLine());
-                    myStaff[i].CalculatePay();
-                    Console.WriteLine(myStaff[i].ToString());
-                    i++;
+                    try
+                    {
+                        Console.WriteLine("Enter hours worked for " + myStaff[i].NameOfStaff.ToUpper());
+                        myStaff[i].HoursWorked = Convert.ToInt32(Console.ReadLine());
+                        myStaff[i].CalculatePay();
+                        Console.WriteLine(myStaff[i].ToString());
+                        i++;
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Enter a valid number.");
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                        i++;
+                    }
                 }
-                catch(FormatException)
-                {
-                    Console.WriteLine("Enter a valid number.");
-                }
-                catch(Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    i++;
-                }
+                ps = new PaySlip(month, year);
+                ps.GeneratePaySlip(myStaff);
+                ps.GenerateSumary(myStaff);
             }
-            ps = new PaySlip(month, year);
-            ps.GeneratePaySlip(myStaff);
-            ps.GenerateSumary(myStaff);
             Console.ReadLine();
         }
     }
